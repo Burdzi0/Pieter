@@ -32,7 +32,7 @@ public class Rsa {
 
         return true;
     }
-    public static ArrayList sitoEratostenesa(int N) {
+    public static ArrayList<Integer> sitoEratostenesa(int N) {
         boolean[] tablica = new boolean[N - 1];
         for (int i = 0; i < N - 1; i++) tablica[i] = true;
         ArrayList < Integer > pierwsze = new ArrayList < Integer > ();
@@ -82,7 +82,7 @@ public class Rsa {
 
     public static void main(String[] args) throws IOException {
         int p, q, n, phi;
-        ArrayList < Integer > pierwsze = sitoEratostenesa(200);
+        ArrayList <Integer> pierwsze = sitoEratostenesa(200);
         Random rand = new Random();
         p = pierwsze.get(rand.nextInt(pierwsze.size()));
         q = pierwsze.get(rand.nextInt(pierwsze.size()));
