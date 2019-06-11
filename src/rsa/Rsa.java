@@ -73,11 +73,11 @@ public class Rsa {
     
     public static String Szyfrowanie(String tekst, int n, int e) {
         int[] liczby = ZamianaNaAscii(tekst);
-        String ZaszyfrowanyTekst = "";
+        StringBuilder zaszyfrowanyTekst = new StringBuilder();
         for (int i = 0; i < tekst.length(); i++) {
-            ZaszyfrowanyTekst += (int)(Math.pow(liczby[i], e) % n);
+            zaszyfrowanyTekst.append((int)(Math.pow(liczby[i], e) % n));
         }
-        return ZaszyfrowanyTekst;
+        return zaszyfrowanyTekst.toString();
     }
 
     public static void main(String[] args) throws IOException {
