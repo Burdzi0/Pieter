@@ -28,10 +28,11 @@ public class Rsa {
 
         return true;
     }
+
     public static ArrayList<Integer> sitoEratostenesa(int N) {
         boolean[] tablica = new boolean[N - 1];
         for (int i = 0; i < N - 1; i++) tablica[i] = true;
-        ArrayList < Integer > pierwsze = new ArrayList < Integer > ();
+        ArrayList <Integer> pierwsze = new ArrayList<>();
         for (int i = 2; i <= N; i++) {
             if (tablica[i - 2]) {
                 pierwsze.add(i);
@@ -40,21 +41,25 @@ public class Rsa {
         }
         return pierwsze;
     }
+
     public static int NWD(int A, int B) {
         for (int i = Math.min(A, B); i > 0; i--)
             if (A % i == 0 && B % i == 0) return i;
         return -1;
     }
+
     public static int wyznacz_e(int phi, int n) {
         int e = 3;
         while (NWD(e, phi) != 1) e += 2;
         return e;
     }
+
     public static int wyznacz_d(int e, int phi) {
         int d = 1;
         while ((d * e) % phi != 1) d++;
         return d;
     }
+
     public static int[] ZamianaNaAscii(String tekst) {
         int[] slownik = new int[tekst.length()];
         for (int i = 0; i < tekst.length(); i++) slownik[i] += (int) tekst.charAt(i) + 1;
@@ -98,6 +103,7 @@ public class Rsa {
         System.out.println("Zaszyfrowany tekst: " + tekstZaszyfrowany);
 
         String filePath = "C:\\projekt\\klucze.txt";
+        filePath = "klucze.txt";
 
         FileWriter fileWriter = null;
 
